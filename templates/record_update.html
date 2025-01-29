@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordni tahrirlash</title>
+</head>
+<body>
+  <h1>Rekordni tahrirlash</h1>
+  <hr>
+  <form method = 'post'>
+    {% csrf_token %}
+    <label>Talaba</label>
+    <select name="talaba_id" id="talaba">
+      <option value="{{record.talaba.id}}">{{record.talaba.ism}}</option>
+      {% for talaba in talabalar %}
+      {% if talaba != record.talaba %}
+      <option value="{{talaba.id}}">{{talaba.ism}}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    <br><br>
+    <label>Kitob</label>
+    <select name="kitob_id" id="kitob">
+      <option value="{{record.kitob.id}}">{{record.kitob.nom}}</option>
+      {% for kitob in kitoblar %}
+      {% if kitob != record.kitob %}
+      <option value="{{kitob.id}}">{{kitob.nom}}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    <br><br>
+    <label>Kutubxonachi</label>
+    <select name="kutubxonachi_id" id="kutubxonachi">
+      <option value="{{record.kutubxonachi.id}}">{{record.kutubxonachi.ism}}</option>
+      {% for kutubxonachi in kutubxonachilar %}
+      {% if kutubxonachi != record.kutubxonachi %}
+      <option value="{{kutubxonachi.id}}">{{kutubxonachi.ism}}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    <br><br>
+    <label>Olingan sana</label>
+    <input type="datetime-local" name="olingan_sana" value="{{record.olingan_sana|date:'Y-m-d H:i:s'}}" id="olingan_sana">
+    <br><br>
+    <label>Qaytargan sana</label>
+    <input type="datetime-local" name='qaytargan_sana' value="{{record.qaytargan_sana|date:'Y-m-d H:i:s'}}" id="qaytargan_sana">
+    <br><br>
+    <label>Qaytardi</label>
+    <input type="checkbox" name="qaytardi" {% if record.qaytardi == True %} checked {% endif %} id="qaytardi">
+    <a href="/recordlar/">
+      <button>Tasdiqlash</button>
+    </a>
+    <button type="button">Bekor qilish</button>
+  </form>
+</body>
+</html>

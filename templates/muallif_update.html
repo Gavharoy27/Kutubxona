@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mualliflar | Tahrirlash</title>
+</head>
+<body>
+    <h1>{{muallif.ism}} ni tahrirlash</h1>
+<hr>
+<form method = 'post'>
+    {% csrf_token %}
+    <label>Ism</label>
+    <input type = 'text' name = 'ism' value = '{{muallif.ism}}'>
+    <br><br>
+    <label>Jins</label>
+    <select name = 'jins'>
+        <option>{{muallif.jins}}</option>
+        <option>
+            {% if muallif.jins == 'Erkak' %}
+            Ayol
+            {% else %}
+            Erkak
+            {% endif %}
+        </option>
+    </select>
+    <br><br>
+    <label>Tug'ilgan sana</label>
+    <input type = 'date' name = 't_sana' value = '{{muallif.t_sana|date:"Y-m-d"}}'>
+    <br><br>
+    <label>Kitob soni</label>
+    <input type = 'number' name = 'kitob_soni' value = '{{muallif.kitob_soni}}'>
+    <br><br>
+    <label>Tirik</label>
+    <input type = 'checkbox' name = 'tirik' {% if muallif.tirik %} checked {% endif %}>
+    <a href = '/mualliflar/'>
+        <button type = 'button'>Bekor qilish</button>
+    </a>
+    <button>Tasdiqlash</button>
+</form>
+</body>
+</html>

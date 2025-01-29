@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muallif | O'chirish | Tasdiqlash</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6
+        }
+         h2 {
+            color: blue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>{{ muallif.ism }} ni o'chirmoqchimisiz?</p>
+    <button style ='padding: 10px; border: none; border-radius: 50px; background-color: aqua'>
+        <a style = 'text-decoration: none' href = '/muallif/{{muallif.id}}/delete/'>Ha</a>
+    </button>
+    <button style ='padding: 10px; border: none; border-radius: 50px; background-color: aqua'>
+        <a style = 'text-decoration: none' href = '/mualliflar/'>Yo'q</a>
+    </button>
+</body>
+</html>

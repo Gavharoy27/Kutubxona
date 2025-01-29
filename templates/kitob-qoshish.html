@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangi kitob</title>
+</head>
+<body>
+<a style = 'text-decoration:none' href = '/home/'>Bosh sahifa</a><br>
+<a style = 'text-decoration:none'  href = '/kitoblar/'>Kitoblar</a><br>
+<form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button style="padding: 6px 20px; background-color:darkgreen; color:white; border:none; border-radius:5px;">Tasdiqlash</button>
+</form>
+</body>
+</html>

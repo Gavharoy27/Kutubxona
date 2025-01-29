@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muallif ma'lumotlari</title>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6
+        }
+         h2 {
+            color: blue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+  <h1>Muallif ma'lumotlari</h1>
+  <a style = "text-decoration: none" href="/home/">Bosh sahifa</a>
+  <hr>
+  {% for m in muallif_mal %}
+  <p>{{ m.id }}.{{ m.ism }}: {{ m.t_sana }}<br>
+    Kitob soni: {{ m.kitob_soni }}
+    Tirik: {{ m.tirik }}
+  </p>
+  {% endfor %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10dan kam kitobli</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6
+        }
+         h2 {
+            color: blue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>10dan kam kitobli</h1>
+    <a style = "text-decoration: none" href="/home/">Bosh sahifa</a>
+    <hr>
+    {% for t in ten %}
+    <p>{{ t.id }}. {{ t.muallif.ism }} <br>
+    {{ t.nom }}
+    </p>
+    {% endfor %}
+</body>
+</html>

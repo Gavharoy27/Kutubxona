@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max sahifali kitoblar</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6
+        }
+         h2 {
+            color: blue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+  <h1>Max sahifali kitoblar</h1>
+  <a style = "text-decoration: none" href="/home/">Bosh sahifa</a>
+  <hr>
+  {% for m in max_sahifa %}
+  <p>{{ m.id }}. {{ m.nom }}</p>
+  {% endfor %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitiruvchi recordlar</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6
+        }
+         h2 {
+            color: blue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bitiruvchi recordlar</h1>
+    <a style = "text-decoration: none" href="/home/">Bosh sahifa</a>
+    <hr>
+    {% for b in bitiruvchi_rec %}
+    <p>{{ b.id }}.{{ b.talaba.ism }} - {{ b.kitob.nom }} <br>
+        Kutubxonachi: {{ t.kutubxonachi }} <br>
+        Olingan sana: {{ t.olingan_sana }} <br>
+        Qaytargan sana: {{ t.qaytargan_sana }} <br>
+        Qaytardi: {{ t.qaytardi }}
+    </p>
+    {% endfor %}
+</body>
+</html>

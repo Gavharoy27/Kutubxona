@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar | Tahrirlash</title>
+</head>
+<body>
+    <h1>{{kitob.nom}}ni tahrirlash</h1>
+    <hr>
+    <form method = 'post'>
+        {% csrf_token %}
+        <label>Nom</label>
+        <input name="nom" value="{{kitob.nom}}">
+        <br><br>
+        <label>Janr</label>
+        <input name="janr" value="{{kitob.janr}}">
+        <br><br>
+        <label>Sahifa</label>
+        <input type='number' name="sahifa" value="{{kitob.sahifa}}">
+        <br><br>
+        <label>Muallif</label>
+        <select name="muallif_id">
+            <option value="{{kitob.muallif.id}}">{{kitob.muallif.ism}}</option>
+            {% for muallif in mualliflar %}
+               {% if kitob.muallif != muallif %}
+                <option value="{{muallif.id}}">
+                    {% endif %}
+                    {{muallif.ism}}
+                </option>
+            {% endfor %}
+        </select>
+        <a href="/kitoblar/">
+            <button type="button">
+                Bekor qilish
+            </button>
+        </a>
+         <button>Tasdiqlash</button>
+    </form>
+</body>
+</html>

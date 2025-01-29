@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxonachi | Tahrirlash</title>
+</head>
+<body>
+  <h1>{{kutubxonachi.ism}}ni tahrirlash</h1>
+  <hr>
+  <form method="post">
+    {% csrf_token %}
+    <label>Ism</label>
+    <input name="ism" value="{{kutubxonachi.ism}}">
+    <br><br>
+    <label>Ish vaqti</label>
+    <select name="ish_vaqti">
+      <option value="{{kutubxonachi.id}}">{{kutubxonachi.ish_vaqti}}</option>
+      {% for ish_vaqti in ish_vaqtlari %}
+        <option>
+          {{ish_vaqti.0}}
+        </option>
+      {% endfor %}
+    </select>
+    <br><br>
+    <a href="/kutubxonachilar/">
+            <button type="button">
+                Bekor qilish
+            </button>
+        </a>
+         <button>Tasdiqlash</button>
+  </form>
+</body>
+</html>

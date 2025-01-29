@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talabalar | Tahrirlash</title>
+</head>
+<body>
+    <h1>{{talaba.ism}} ni tahrirlash</h1>
+<hr>
+<form method = 'post'>
+    {% csrf_token %}
+    <label>Ism</label>
+    <input type = 'text' name = 'ism' value = '{{talaba.ism}}'>
+    <br><br>
+    <label>Guruh</label>
+    <input type = 'text' name = 'guruh' value = '{{talaba.guruh}}'>
+    <br><br>
+    <label>Kurs</label>
+    <select name = 'kurs'>
+        <option value = '{{talaba.kurs}}'>{{talaba.kurs}}-kurs</option>
+        <option value = '1'>1-kurs</option>
+        <option value = '2'>2-kurs</option>
+        <option value = '3'>3-kurs</option>
+        <option value = '4'>4-kurs</option>
+    </select>
+    <br><br>
+    <label>Kitob soni</label>
+    <input type = 'text' name = 'kitob_soni' value = '{{talaba.kitob_soni}}'>
+    <br><br>
+    <a href = '/talabalar/'>
+        <button type = 'button'>Bekor qilish</button>
+    </a>
+    <button>Tasdiqlash</button>
+</form>
+</body>
+</html>
